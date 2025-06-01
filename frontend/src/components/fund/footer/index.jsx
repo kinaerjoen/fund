@@ -191,6 +191,7 @@ const Footer = () => {
 									}}
 									width={"140px"}
 									height={"45px"}
+									marginTop={'20px'}
 									onClick={onNeedHelpModalOpen}
 								>
 									Нужна помощь
@@ -242,7 +243,7 @@ const Footer = () => {
 									borderRadius={"50%"}
 									cursor={"pointer"}
 									href="https://vk.com/children_hospice"
-									border={"1px solid #8897a8"}
+									// border={"1px solid #8897a8"}
 									display={"flex"}
 									justifyContent={"center"}
 									alignItems={"center"}

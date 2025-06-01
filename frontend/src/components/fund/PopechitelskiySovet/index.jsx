@@ -373,7 +373,7 @@ const Participants = ({ participants }) => {
 										>
 											{text}
 										</Text>
-										<Link
+										{/* <Link
 											textDecoration={"underline"}
 											color={"#bf3132"}
 											mt={"12px"}
@@ -386,12 +386,12 @@ const Participants = ({ participants }) => {
 											}
 										>
 											Читать биографию
-										</Link>
+										</Link> */}
 									</Flex>
 									<Flex mt={"30px"} align={"center"} wrap={"wrap"}>
 										<Flex align={"center"} mr={"100px"} wrap={"wrap"}>
-											<Icon w={"15px"} h={"15px"} as={phone} fill={"#bf3132"} />
-											<a
+											{/* <Icon w={"15px"} h={"15px"} as={phone} fill={"#bf3132"} /> */}
+											{/* <a
 												href="tel: +7 (915) 233-33-38"
 												style={{
 													color: "#1f243a",
@@ -401,8 +401,8 @@ const Participants = ({ participants }) => {
 												}}
 											>
 												+7 (915) 233-33-38
-											</a>
-											<a
+											</a> */}
+											{/* <a
 												href="tel: +7 (915) 233-33-38"
 												style={{
 													color: "#1f243a",
@@ -413,9 +413,9 @@ const Participants = ({ participants }) => {
 												}}
 											>
 												+7 (985) 868-48-42
-											</a>
+											</a> */}
 										</Flex>
-										<Flex align={"center"} marginTop="10px">
+										<Flex align={"center"} marginTop="10px" marginLeft={'auto'}>
 											<Icon
 												w={"15px"}
 												h={"15px"}

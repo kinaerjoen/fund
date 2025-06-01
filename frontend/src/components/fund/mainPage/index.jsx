@@ -61,6 +61,7 @@ export default function MainPage({
 									width: "445px",
 									marginLeft: "18px",
 									marginTop: "33px",
+									marginBottom: '20px'
 								}}
 							>
 								<li style={{ color: "#33438e" }}>
