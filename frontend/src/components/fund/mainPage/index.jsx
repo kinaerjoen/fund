@@ -8,10 +8,7 @@ import {
 	useDisclosure,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import mainBg from "../../../assets/mainBg.jpg";
-import mainBgMobile from "../../../assets/mainBgMobile.jpg";
-import mainPashaev from "../../../assets/mainPashaev.jpg";
-import mainQuotes from "../../../assets/mainQuotes.png";
+import logoMayak from '../../../assets/logo.png';
 import PreFooter from "../footer/pre-footer";
 import { PaymentModal } from "../modals/paymentModal";
 import NewCard from "../News/new-card";
@@ -40,53 +37,59 @@ export default function MainPage({
 					<Flex
 						align={"center"}
 						w={"100%"}
-						h={"911px"}
-						bgPos={"center"}
-						bgRepeat={"no-repeat"}
-						bgImage={mainBg}
+						h={"auto"}
+						bgColor={"#F6F8FA"}
 					>
 						<Flex direction="column" marginLeft={"101px"}>
+							{/* <Image src={logoMayak} alt="Дом с маяком" w={180} mb={6} /> */}
 							<Heading
 								fontFamily={"Oswald"}
-								color={"#1f243a"}
-								fontSize={"65px"}
+								color={"#2D415A"}
+								fontSize={"48px"}
 								fontWeight={"600"}
 								textTransform={"uppercase"}
+								marginTop={'120px'}
 							>
-								<span
-									style={{
-										color: "#bf3132",
-										fontFamily: "Oswald",
-									}}
-								>
-									Благотворительный
-								</span>
-								<br />
-								фонд «Пашаев Фонд»
+								Благотворительный фонд «Дом с маяком»
 							</Heading>
-							{/* <Button
-								borderRadius={"3px"}
-								mt={"53px"}
-								w={"245px"}
-								h={"60px"}
-								bg={
-									"linear-gradient(to right, #771e2e 0%, #bf3132 99%, #bf3132 100%)"
-								}
-								transition={"all 0.5s"}
-								_hover={{
-									bg: "linear-gradient(to right, #771e2e 0%, #771e2e 99%, #771e2e 100%)",
+							<Text mt={6} fontSize={'22px'} color={'#2D415A'} maxW={'600px'}>
+								Наша миссия — помогать семьям с неизлечимо больными детьми жить полноценной жизнью, несмотря на диагноз. Мы стремимся сделать так, чтобы каждый ребенок, независимо от тяжести заболевания, мог радоваться каждому дню и получать необходимую поддержку.
+							</Text>
+							<ul
+								style={{
+									listStyle: "square",
+									width: "445px",
+									marginLeft: "18px",
+									marginTop: "33px",
 								}}
-								_active={{
-									bg: "linear-gradient(to right, #6d1424 0%, #6d1424 99%, #6d1424 100%)",
-								}}
-								color={"white"}
-								onClick={onPaymentModalOpen}
 							>
-								Хочу помогать
+								<li style={{ color: "#33438e" }}>
+									<span style={{ color: "#1f243a" }}>
+										Паллиативная помощь детям: организация выездной службы помощи на дому, обеспечение семей необходимыми лекарствами и медицинским оборудованием, обучение родителей навыкам ухода за тяжелобольным ребенком
+									</span>
+								</li>
+								<li style={{ color: "#33438e" }}>
+									<span style={{ color: "#1f243a" }}>
+										Психологическая поддержка: помощь семьям в преодолении эмоциональных трудностей, организация групп поддержки для родителей и братьев/сестер, индивидуальные консультации психологов
+									</span>
+								</li>
+								<li style={{ color: "#33438e" }}>
+									<span style={{ color: "#1f243a" }}>
+										Развитие детской паллиативной помощи: обучение специалистов, внедрение современных методик ухода, создание системы непрерывной поддержки семей с тяжелобольными детьми
+									</span>
+								</li>
+								<li style={{ color: "#33438e" }}>
+									<span style={{ color: "#1f243a" }}>
+										Прозрачность и открытость: регулярная публикация отчетов о работе фонда, подробная информация о расходовании средств, возможность для каждого донора увидеть, как его помощь меняет жизнь семей
+									</span>
+								</li>
+							</ul>
+							{/* <Button mt={8} colorScheme="teal" size="lg" onClick={onPaymentModalOpen}>
+								Помочь
 							</Button> */}
 						</Flex>
 					</Flex>
-					<Flex justify={"center"} width={"100%"} pt={"66px"} pb={"75px"}>
+					{/* <Flex justify={"center"} width={"100%"} pt={"66px"} pb={"75px"}>
 						<Flex w={"1133px"}>
 							<Flex direction={"column"}>
 								<Flex>
@@ -126,12 +129,7 @@ export default function MainPage({
 									</Text>
 								</Flex>
 								<Text w={"560px"} mt={"30px"} color={"#1f243a"}>
-									Поддержка детских домов, талантливой молодежи, а в данный
-									момент бойцов на передовой и их семей.
-									<br />
-									<br />
-									Сейчас мы оказываем всестороннюю поддержку солдатам и их
-									семьям:
+									Задачи нашего фонда включают:
 								</Text>
 								<ul
 									style={{
@@ -143,26 +141,22 @@ export default function MainPage({
 								>
 									<li style={{ color: "#33438e" }}>
 										<span style={{ color: "#1f243a" }}>
-											доставляем в зону боевых действий продукты питания
+											Развитие благотворительности: увеличение уровня благотворительности в России, привлечение людей и организаций к помощи нуждающимся, организация программ и акций по популяризации благотворительности
 										</span>
 									</li>
 									<li style={{ color: "#33438e" }}>
 										<span style={{ color: "#1f243a" }}>
-											лекарственные средства
-										</span>
-									</li>
-									<li style={{ color: "#33438e" }}>
-										<span style={{ color: "#1f243a" }}>амуницию</span>
-									</li>
-									<li style={{ color: "#33438e" }}>
-										<span style={{ color: "#1f243a" }}>
-											транспортные средства
+											Помощь наиболее уязвимым группам: поддержка детей с тяжелыми заболеваниями и их семей, обеспечение необходимых условий для жизни, включая медицинскую помощь и социальную поддержку
 										</span>
 									</li>
 									<li style={{ color: "#33438e" }}>
 										<span style={{ color: "#1f243a" }}>
-											оказываем правовую и юридическую поддержку лицам -
-											участникам боевых действий
+											Развитие паллиативной помощи: поддержка инициатив по развитию детской паллиативной помощи, проведение образовательных программ для специалистов и семей
+										</span>
+									</li>
+									<li style={{ color: "#33438e" }}>
+										<span style={{ color: "#1f243a" }}>
+											Прозрачность и отчетность: регулярное предоставление отчетов о проектах, использовании средств и достигнутых результатах для обеспечения доверия доноров и партнеров
 										</span>
 									</li>
 								</ul>
@@ -174,7 +168,7 @@ export default function MainPage({
 									borderRadius={"3px"}
 									bgRepeat={"no-repeat"}
 									bgPos={"30px 30px"}
-									bgImage={mainQuotes}
+									bgImage={logoMayak}
 								>
 									<Text m={"50px"} fontSize={"16px"}>
 										Благотворительность для меня является не только важным, но и
@@ -190,7 +184,6 @@ export default function MainPage({
 									</Text>
 								</Box>
 							</Flex>
-							<Image src={mainPashaev} ml={"29px"} />
 						</Flex>
 					</Flex>
 					{projects.length > 0 && (
@@ -261,7 +254,7 @@ export default function MainPage({
 								</Flex>
 							</Flex>
 						</Flex>
-					)}
+					)} */}
 					{news.length > 0 && (
 						<Flex
 							justify={"center"}
@@ -322,17 +315,6 @@ export default function MainPage({
 							</Flex>
 						</Flex>
 					)}
-					{/* <Flex
-						justify={"center"}
-						width={"100%"}
-						pt={"66px"}
-						pb={"75px"}
-						bgColor={"#f2f5f8"}
-					>
-						<Flex w={"1133px"}>
-							<PaymentWithHistory isHeader={true} />
-						</Flex>
-					</Flex> */}
 					{participants.length > 0 && (
 						<Flex justify={"center"} width={"100%"} pt={"74px"} pb={"75px"}>
 							<Flex w={"1133px"}>
@@ -407,7 +389,7 @@ export default function MainPage({
 						h={"327px"}
 						bgPos={"center"}
 						bgRepeat={"no-repeat"}
-						bgImage={mainBgMobile}
+						bgImage={logoMayak}
 						bgSize={"cover"}
 						mt={"40px"}
 					>
@@ -424,37 +406,25 @@ export default function MainPage({
 								fontSize={"25px"}
 								fontWeight={"600"}
 								textTransform={"uppercase"}
+								mb={'-80px'}
+								ml={'20px'}
+								// mt={'200px'}
 							>
 								<span
 									style={{
+										marginTop: '120px',
 										color: "#bf3132",
 										fontFamily: "Oswald",
+										marginBottom: '120px'
 									}}
 								>
 									Благотворительный
 								</span>
 								<br />
-								фонд «Пашаев Фонд»
+								фонд «Дом с маяком»
 							</Heading>
-							{/* <Button
-								borderRadius={"3px"}
-								mt={"10px"}
-								w={"150px"}
-								h={"45px"}
-								bg={
-									"linear-gradient(to right, #771e2e 0%, #bf3132 99%, #bf3132 100%)"
-								}
-								transition={"all 0.5s"}
-								_hover={{
-									bg: "linear-gradient(to right, #771e2e 0%, #771e2e 99%, #771e2e 100%)",
-								}}
-								_active={{
-									bg: "linear-gradient(to right, #6d1424 0%, #6d1424 99%, #6d1424 100%)",
-								}}
-								color={"white"}
-								onClick={onPaymentModalOpen}
-							>
-								Хочу помогать
+							{/* <Button mt={8} colorScheme="teal" size="lg" onClick={onPaymentModalOpen}>
+								Помочь
 							</Button> */}
 						</Flex>
 					</Flex>
@@ -467,12 +437,13 @@ export default function MainPage({
 					>
 						<Flex>
 							<Flex direction={"column"}>
-								<Flex>
+								<Flex mt={'40px'}>
 									<Box
 										marginLeft={"8px"}
 										display={"flex"}
 										justifyContent={"center"}
 										alignItems={"center"}
+										
 										css={`
 											width: 70px;
 											height: 30px;
@@ -504,12 +475,7 @@ export default function MainPage({
 									</Text>
 								</Flex>
 								<Text mt={"17px"} color={"#1f243a"} fontSize={"14px"}>
-									Поддержка детских домов, талантливой молодежи, а в данный
-									момент бойцов на передовой и их семей.
-									<br />
-									<br />
-									Сейчас мы оказываем всестороннюю поддержку солдатам и их
-									семьям:
+									Наша миссия — помогать семьям с неизлечимо больными детьми жить полноценной жизнью, несмотря на диагноз. Мы стремимся сделать так, чтобы каждый ребенок, независимо от тяжести заболевания, мог радоваться каждому дню и получать необходимую поддержку.
 								</Text>
 								<ul
 									style={{
@@ -521,30 +487,26 @@ export default function MainPage({
 								>
 									<li style={{ color: "#33438e" }}>
 										<span style={{ color: "#1f243a" }}>
-											доставляем в зону боевых действий продукты питания
+											Паллиативная помощь детям: организация выездной службы помощи на дому, обеспечение семей необходимыми лекарствами и медицинским оборудованием, обучение родителей навыкам ухода за тяжелобольным ребенком
 										</span>
 									</li>
 									<li style={{ color: "#33438e" }}>
 										<span style={{ color: "#1f243a" }}>
-											лекарственные средства
-										</span>
-									</li>
-									<li style={{ color: "#33438e" }}>
-										<span style={{ color: "#1f243a" }}>амуницию</span>
-									</li>
-									<li style={{ color: "#33438e" }}>
-										<span style={{ color: "#1f243a" }}>
-											транспортные средства
+											Психологическая поддержка: помощь семьям в преодолении эмоциональных трудностей, организация групп поддержки для родителей и братьев/сестер, индивидуальные консультации психологов
 										</span>
 									</li>
 									<li style={{ color: "#33438e" }}>
 										<span style={{ color: "#1f243a" }}>
-											оказываем правовую и юридическую поддержку лицам -
-											участникам боевых действий
+											Развитие детской паллиативной помощи: обучение специалистов, внедрение современных методик ухода, создание системы непрерывной поддержки семей с тяжелобольными детьми
+										</span>
+									</li>
+									<li style={{ color: "#33438e" }}>
+										<span style={{ color: "#1f243a" }}>
+											Прозрачность и открытость: регулярная публикация отчетов о работе фонда, подробная информация о расходовании средств, возможность для каждого донора увидеть, как его помощь меняет жизнь семей
 										</span>
 									</li>
 								</ul>
-								<Image src={mainPashaev} mt={"30px"} />
+								{/* <Image src={logoMayak} mt={"30px"} />
 								<Box
 									pos={"relative"}
 									h={"350px"}
@@ -561,10 +523,10 @@ export default function MainPage({
 										w={"70px"}
 										h={"70px"}
 										bgRepeat={"no-repeat"}
-										bgImage={mainQuotes}
+										bgImage={logoMayak}
 										bgSize={"60px"}
-									/>
-									<Text p={"18px"} fontSize={"14px"}>
+									/> */}
+									{/* <Text p={"18px"} fontSize={"14px"}>
 										Благотворительность для меня является не только важным, но и
 										простым делом, которое каждый из нас может сделать, чтобы
 										помочь тем, кто находится в беде или нуждается в поддержке.
@@ -576,8 +538,8 @@ export default function MainPage({
 										<br />У меня нет морального права оставаться безучастным.
 										Наши дети, наша молодежь и наши защитники — это наше
 										будущее. Наша сила заключается в единстве!
-									</Text>
-								</Box>
+									</Text> */}
+								{/* </Box> */}
 							</Flex>
 						</Flex>
 					</Flex>
@@ -713,17 +675,6 @@ export default function MainPage({
 							</Flex>
 						</Flex>
 					)}
-					{/* <Flex
-						justify={"center"}
-						width={"100%"}
-						pt={"36px"}
-						pb={"35px"}
-						bgColor={"#f2f5f8"}
-					>
-						<Flex>
-							<PaymentWithHistory isHeader={true} />
-						</Flex>
-					</Flex> */}
 					{participants.length > 0 && (
 						<Flex width={"100%"} pt={"34px"} pb={"35px"} px={"15px"}>
 							<Flex flexDir={"column"} w={"100%"}>

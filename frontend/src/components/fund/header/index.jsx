@@ -19,7 +19,6 @@ import {
 
 import { useState } from "react";
 import logo from "../../../assets/logo.png";
-import { ReactComponent as tg } from "../../../assets/telegram.svg";
 import { ReactComponent as vk } from "../../../assets/vk.svg";
 import { NeedHelpModal } from "../modals/needHelpModal";
 import { PaymentModal } from "../modals/paymentModal";
@@ -97,7 +96,7 @@ export default function WithSubnavigation({ children }) {
 								display={"flex"}
 								justifyContent={"center"}
 								alignItems={"center"}
-								href="https://vk.com/id810628743"
+								href="https://vk.com/children_hospice"
 							>
 								<Icon
 									w={"20px"}
@@ -106,24 +105,6 @@ export default function WithSubnavigation({ children }) {
 									fill={"#000000"}
 									marginRight={"20px"}
 									marginLeft={"20px"}
-									cursor={"pointer"}
-									_hover={{
-										fill: "#bf3132",
-									}}
-								/>
-							</Link>
-							<Link
-								display={"flex"}
-								justifyContent={"center"}
-								alignItems={"center"}
-								href="https://t.me/elmanpashaev"
-							>
-								<Icon
-									w={"20px"}
-									h={"20px"}
-									as={tg}
-									fill={"#000000"}
-									marginRight={"22px"}
 									cursor={"pointer"}
 									_hover={{
 										fill: "#bf3132",
@@ -142,9 +123,9 @@ export default function WithSubnavigation({ children }) {
 										fontSize: "16px",
 										marginRight: "16px",
 									}}
-									href="tel: +7 (915) 233-33-38"
+									href="tel: 8 800 600-49-29"
 								>
-									+7 (915) 233-33-38
+									8 800 600-49-29
 								</a>
 							</Text>
 							{/* <Button
@@ -423,9 +404,9 @@ const MobileNav = ({ onPaymentModalOpen, onNeedHelpModalOpen }) => {
 							fontWeight: "700",
 							fontSize: "20px",
 						}}
-						href="tel: +7 (915) 233-33-38"
+						href="tel: 8 800 600-49-29"
 					>
-						+7 (915) 233-33-38
+						8 800 600-49-29
 					</a>
 				</Text>
 				<Flex mt={"10px"}>
@@ -433,30 +414,12 @@ const MobileNav = ({ onPaymentModalOpen, onNeedHelpModalOpen }) => {
 						display={"flex"}
 						justifyContent={"center"}
 						alignItems={"center"}
-						href="https://vk.com/id810628743"
+						href="https://vk.com/children_hospice"
 					>
 						<Icon
 							w={"30px"}
 							h={"30px"}
 							as={vk}
-							fill={"#000000"}
-							cursor={"pointer"}
-							_hover={{
-								fill: "#bf3132",
-							}}
-						/>
-					</Link>
-					<Link
-						display={"flex"}
-						justifyContent={"center"}
-						alignItems={"center"}
-						href="https://t.me/elmanpashaev"
-						ml={"20px"}
-					>
-						<Icon
-							w={"30px"}
-							h={"30px"}
-							as={tg}
 							fill={"#000000"}
 							cursor={"pointer"}
 							_hover={{

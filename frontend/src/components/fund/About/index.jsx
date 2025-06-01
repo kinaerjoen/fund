@@ -6,6 +6,7 @@ import handsNHearts from "../../../assets/handsNHearts.png";
 import workNThank from "../../../assets/workNThank.png";
 import PdfItem from "../footer/pdf-item";
 import ParticipantCard from "../PopechitelskiySovet/participant-card";
+import logoMayak from '../../../assets/logo.png';
 
 const About = ({ pdfs, participants }) => {
 	useEffect(() => {
@@ -17,6 +18,20 @@ const About = ({ pdfs, participants }) => {
 			{document.documentElement.clientWidth > 767 ? (
 				<Box>
 					<Flex flexDir={"column"} align={"center"}>
+						<Image src={logoMayak} alt="Дом с маяком" w={180} mb={6} mt={'120px'} />
+						<Heading fontSize={'40px'} color={'#2D415A'} fontFamily={'Oswald'} textAlign={'center'} w={'100%'} mt={'20px'}>
+							Благотворительный фонд «Дом с маяком»
+						</Heading>
+						<Text fontSize={'20px'} color={'#2D415A'} mt={6} maxW={'700px'} mb={'100px'} padding={'0 10px'}>
+							Мы не знаем, сколько времени впереди, поэтому стараемся ничего не откладывать на завтра. Дети должны радоваться и радовать тех, кто рядом. Что бы ни случилось. «Дом с маяком» создан для того, чтобы помогать семьям с неизлечимо больными детьми. Мы знаем, жизнь человека, тем более ребенка, несовместима с болью, и невозможна без тепла и света.
+						</Text>
+						{/* <Text fontSize={'18px'} color={'#2D415A'} mt={8}>
+							Адрес: ул Долгоруковская, д 30, Москва<br/>
+							Телефон: 8 800 600-49-29<br/>
+							Email: info@mayak.help<br/>
+							VK: <a href="https://vk.com/children_hospice" target="_blank" rel="noopener noreferrer">vk.com/children_hospice</a><br/>
+							Сайт: <a href="https://mayak.help/" target="_blank" rel="noopener noreferrer">mayak.help</a>
+						</Text> */}
 						<Flex
 							align={"center"}
 							w={"100%"}
@@ -33,7 +48,7 @@ const About = ({ pdfs, participants }) => {
 									textAlign={"center"}
 									w={"650px"}
 								>
-									Благотворительный фонд Эльмана Пашаева
+									Благотворительный фонд "Дом с маяком"
 								</Heading>
 							</Flex>
 						</Flex>
@@ -319,6 +334,20 @@ const About = ({ pdfs, participants }) => {
 			) : (
 				<Box>
 					<Flex flexDir={"column"} align={"center"}>
+						<Image src={logoMayak} alt="Дом с маяком" w={180} mb={6} mt={'20px'}/>
+						<Heading fontSize={'40px'} color={'#2D415A'} fontFamily={'Oswald'} textAlign={'center'} w={'100%'} >
+							Благотворительный фонд «Дом с маяком»
+						</Heading>
+						<Text fontSize={'20px'} color={'#2D415A'} mt={6} maxW={'700px'} padding={'0 10px'}>
+							Мы не знаем, сколько времени впереди, поэтому стараемся ничего не откладывать на завтра. Дети должны радоваться и радовать тех, кто рядом. Что бы ни случилось. «Дом с маяком» создан для того, чтобы помогать семьям с неизлечимо больными детьми. Мы знаем, жизнь человека, тем более ребенка, несовместима с болью, и невозможна без тепла и света.
+						</Text>
+						<Text fontSize={'18px'} color={'#2D415A'} mt={8}>
+							Адрес: ул Долгоруковская, д 30, Москва<br/>
+							Телефон: 8 800 600-49-29<br/>
+							Email: info@mayak.help<br/>
+							VK: <a href="https://vk.com/children_hospice" target="_blank" rel="noopener noreferrer">vk.com/children_hospice</a><br/>
+							Сайт: <a href="https://mayak.help/" target="_blank" rel="noopener noreferrer">mayak.help</a>
+						</Text>
 						<Flex
 							align={"center"}
 							w={"100%"}
@@ -337,7 +366,7 @@ const About = ({ pdfs, participants }) => {
 									textAlign={"center"}
 									textTransform={"uppercase"}
 								>
-									Благотворительный <br /> фонд Эльмана Пашаева
+									Благотворительный <br /> фонд "Дом с маяком"
 								</Heading>
 							</Flex>
 						</Flex>

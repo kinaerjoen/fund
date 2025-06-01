@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import blueBg from "../../../assets/blue.png";
+import femalePlaceholder from "../../../assets/female-placeholder.jpg";
 import { getMediaUrl } from "../../../helpers/getMediaUrl";
 import { ParticipantModal } from "../modals/participantModal";
 
@@ -29,20 +30,6 @@ const ParticipantCard = ({ name, image, position, description }) => {
 			alignItems={"flex-end"}
 			pos={"relative"}
 			bgColor={"#1f243a"}
-			_before={{
-				zIndex: 0,
-				position: "absolute",
-				left: 0,
-				top: 0,
-				width: "262px",
-				height: "340px",
-				content: `""`,
-				backgroundImage: `url(${getMediaUrl(image)})`,
-				backgroundRepeat: "no-repeat",
-				bgSize: "cover",
-				bgPos: "center",
-				borderRadius: "3px",
-			}}
 		>
 			<Image
 				position={"absolute"}
@@ -51,7 +38,9 @@ const ParticipantCard = ({ name, image, position, description }) => {
 				zIndex={1}
 				w={"262px"}
 				height={"340px"}
-				src={blueBg}
+				src={image ? getMediaUrl(image) : femalePlaceholder}
+				objectFit="cover"
+				borderRadius="3px"
 			/>
 			<CardBody
 				p={0}

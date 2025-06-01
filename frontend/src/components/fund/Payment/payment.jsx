@@ -339,7 +339,7 @@ const Payment = ({ padding, width, height, background, isTitle = true }) => {
 							</Stack>
 						</Flex>
 						<Link
-						// to={"https://pashaev-fund.server.paykeeper.ru/testgw/create/"}
+							to={"https://mayak.help/payment"}
 						>
 							<Button
 								borderRadius={"3px"}
@@ -611,7 +611,7 @@ const Payment = ({ padding, width, height, background, isTitle = true }) => {
 							</Stack>
 						</Flex>
 						<Link
-							to={"https://pashaev-fund.server.paykeeper.ru/testgw/create/"}
+							to={"https://mayak.help/payment"}
 						>
 							<Button
 								borderRadius={"3px"}

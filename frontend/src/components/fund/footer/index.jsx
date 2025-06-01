@@ -9,7 +9,7 @@ import {
 	useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import tg from "../../../assets/telegram-footer.svg";
+// import tg from "../../../assets/telegram-footer.svg";
 import vk from "../../../assets/vk-footer.svg";
 import { NeedHelpModal } from "../modals/needHelpModal";
 
@@ -46,56 +46,49 @@ const Footer = () => {
 				>
 					<Flex w={"1135px"} display={"flex"} justifyContent={"space-between"}>
 						<Box maxW={"550px"}>
-							<Text mb={"40px"} fontSize={"16px"} w={"375px"}>
-								141702, Московская область, г.о. Долгопрудный, ш. Лихачевское,
-								д. 20 к. 1, кв. 80
+							<Text mb={"20px"} fontSize={"16px"} w={"375px"}>
+								ул Долгоруковская, д 30, Москва
 							</Text>
 							<Box h={"50px"} display={"flex"} mt={"30px"}>
 								<Button
 									w={"200px"}
 									h={"45px"}
 									fontWeight={400}
-									bgColor={"transparent"}
-									color={"#8897a8"}
+									bgColor={"#E3F2FD"}
+									color={"#1976D2"}
 									fontSize={"16px"}
-									_hover={{
-										textDecoration: "underline",
-									}}
 									borderRadius={"3px"}
-									border={"1px solid #8897a8"}
-									onClick={() => {}}
+									border={"1px solid #90CAF9"}
+									onClick={() => {
+										window.location = "mailto:info@mayak.help";
+									}}
 								>
-									pashayev_fund@mail.ru
+									info@mayak.help
 								</Button>
 								<Link
 									w={"48px"}
 									h={"48px"}
 									borderRadius={"50%"}
 									cursor={"pointer"}
-									href="https://vk.com/id810628743"
-									border={"1px solid #8897a8"}
+									href="https://vk.com/children_hospice"
+									// border={"1px solid #90CAF9"}
 									display={"flex"}
 									justifyContent={"center"}
 									alignItems={"center"}
 									ml={"20px"}
 								>
-									<Image w={"24px"} src={vk} color="#4C70B4" />
-								</Link>
-								<Link
-									href="https://t.me/elmanpashaev"
-									w={"48px"}
-									h={"48px"}
-									borderRadius={"50%"}
-									cursor={"pointer"}
-									border={"1px solid #8897a8"}
-									display={"flex"}
-									justifyContent={"center"}
-									alignItems={"center"}
-									ml={"20px"}
-								>
-									<Image w={"24px"} src={tg} color="#4C70B4" />
+									<Image w={"24px"} src={vk} color="#1976D2" />
 								</Link>
 							</Box>
+							<Text color={"#1976D2"} fontSize={"14px"} mt={2}>
+								<a
+									href="https://mayak.help/"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									mayak.help
+								</a>
+							</Text>
 						</Box>
 						<Box
 							display={"flex"}
@@ -106,9 +99,9 @@ const Footer = () => {
 							<Text mb={"4px"} color={"#8897a8"} fontSize={"14px"}>
 								с пн - пт с 09:00 до 18:00
 							</Text>
-							<Heading fontSize={"30px"} mb={"30px"}>
-								<a href="tel: +7 (915) 233-33-38">+7 (915) 233-33-38</a>
-							</Heading>
+							<Text color={"#1976D2"} fontSize={"14px"}>
+								Телефон: 8 800 600-49-29
+							</Text>
 							<Flex>
 								{/* <Button
 									backgroundColor="#bf3132"
@@ -142,6 +135,7 @@ const Footer = () => {
 									width={"170px"}
 									height={"45px"}
 									onClick={onNeedHelpModalOpen}
+									mt={'20px'}
 								>
 									Нужна помощь
 								</Button>
@@ -151,11 +145,7 @@ const Footer = () => {
 					<Flex w={"100%"} h={"50px"} bgColor={"#161a2c"} justify={"center"}>
 						<Flex w={"1135px"} align={"center"}>
 							<Text color={"#303754"} fontSize={"14px"}>
-								© {new Date().getFullYear()} «Благотворительный фонд «Пашаев
-								Фонд».{" "}
-								<a href="policy" style={{ textDecoration: "underline" }}>
-									Политика конфиденциальности
-								</a>
+								© {new Date().getFullYear()} Благотворительный фонд «Дом с маяком». Все права защищены.
 							</Text>
 						</Flex>
 					</Flex>
@@ -184,13 +174,9 @@ const Footer = () => {
 							>
 								с пн - пт с 09:00 до 18:00
 							</Text>
-							<Heading
-								fontSize={"30px"}
-								mb={"30px"}
-								fontFamily={"Wix Madefor Display"}
-							>
-								<a href="tel: +7 (915) 233-33-38">+7 (915) 233-33-38</a>
-							</Heading>
+							<Text color={"#1976D2"} fontSize={"14px"}>
+								Телефон: 8 800 600-49-29
+							</Text>
 							<Flex mb={"50px"}>
 								<Button
 									backgroundColor="#33438e"
@@ -229,9 +215,7 @@ const Footer = () => {
 								</Button> */}
 							</Flex>
 							<Text fontSize={"14px"} textAlign={"center"}>
-								141702, Московская область, <br /> г.о. Долгопрудный, ш.
-								Лихачевское, <br />
-								д. 20 к. 1, кв. 80
+								ул Долгоруковская, д 30, Москва
 							</Text>
 							<Box h={"50px"} display={"flex"} mt={"30px"}>
 								<Button
@@ -246,16 +230,18 @@ const Footer = () => {
 									}}
 									borderRadius={"3px"}
 									border={"1px solid #8897a8"}
-									onClick={() => {}}
+									onClick={() => {
+										window.location = "mailto:info@mayak.help";
+									}}
 								>
-									pashayev_fund@mail.ru
+									info@mayak.help
 								</Button>
 								<Link
 									w={"48px"}
 									h={"48px"}
 									borderRadius={"50%"}
 									cursor={"pointer"}
-									href="https://vk.com/id810628743"
+									href="https://vk.com/children_hospice"
 									border={"1px solid #8897a8"}
 									display={"flex"}
 									justifyContent={"center"}
@@ -264,28 +250,14 @@ const Footer = () => {
 								>
 									<Image w={"24px"} src={vk} color="#4C70B4" />
 								</Link>
-								<Link
-									href="https://t.me/elmanpashaev"
-									w={"48px"}
-									h={"48px"}
-									borderRadius={"50%"}
-									cursor={"pointer"}
-									border={"1px solid #8897a8"}
-									display={"flex"}
-									justifyContent={"center"}
-									alignItems={"center"}
-									ml={"10px"}
-								>
-									<Image w={"24px"} src={tg} color="#4C70B4" />
-								</Link>
 							</Box>
 						</Flex>
 					</Flex>
 					<Flex w={"100%"} bgColor={"#161a2c"} justify={"center"}>
 						<Flex w={"1135px"} align={"center"} justify={"center"} py={"27px"}>
 							<Text color={"#303754"} fontSize={"14px"} textAlign={"center"}>
-								© {new Date().getFullYear()} «Благотворительный фонд <br />
-								«Пашаев Фонд». <br />
+								© {new Date().getFullYear()} Благотворительный фонд <br />
+								«Дом с маяком». <br />
 								<a href="policy" style={{ textDecoration: "underline" }}>
 									Политика конфиденциальности
 								</a>

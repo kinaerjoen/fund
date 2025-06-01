@@ -1,4 +1,4 @@
-import { Flex, Heading, Icon, Link, Text } from "@chakra-ui/react";
+import { Flex, Heading, Icon, Link, Text, Button } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { ReactComponent as message } from "../../../assets/message.svg";
 import { ReactComponent as phone } from "../../../assets/phone.svg";
@@ -24,23 +24,31 @@ const PreFooter = ({ pdfs }) => {
 							<Heading
 								fontFamily={"Oswald"}
 								fontSize={"30px"}
-								color={"#1f243a"}
+								color={"#2D415A"}
 								fontWeight={600}
 								textTransform={"uppercase"}
-								mb={"40px"}
+								mb={"20px"}
 							>
 								Наш адрес
 							</Heading>
 							<Text
 								fontSize={"18px"}
-								color={"#1f243a"}
+								color={"#2D415A"}
 								lineHeight={"27px"}
 								w={"420px"}
-								mb={"60px"}
+								mb={"20px"}
 							>
-								141702, Московская область, г.о. Долгопрудный, ш. Лихачевское,
-								д. 20 к. 1, кв. 80
+								ул Долгоруковская, д 30, Москва
 							</Text>
+							{/* <Button bgColor={'#E3F2FD'} color={'#1976D2'} fontSize={'18px'} fontWeight={700} onClick={() => {window.location='mailto:info@mayak.help'}}>
+								info@mayak.help
+							</Button> */}
+							{/* <Text color={'#1976D2'} fontSize={'16px'} fontWeight={700}>
+								8 800 600-49-29
+							</Text>
+							<Text color={'#1976D2'} fontSize={'16px'} fontWeight={700}  mt={2} mb={'80px'}>
+								<a href="https://mayak.help/" target="_blank" rel="noopener noreferrer">mayak.help</a>
+							</Text> */}
 							<Flex mb={"30px"}>
 								<Flex
 									align={"center"}
@@ -51,7 +59,7 @@ const PreFooter = ({ pdfs }) => {
 								>
 									<Icon w={"25px"} h={"25px"} as={phone} fill={"#1f243a"} />
 									<a
-										href="tel: +7 (915) 233-33-38"
+										href="tel: 8 800 600-49-29"
 										style={{
 											color: "#bf3132",
 											fontSize: "18px",
@@ -59,7 +67,7 @@ const PreFooter = ({ pdfs }) => {
 											marginLeft: "20px",
 										}}
 									>
-										+7 (915) 233-33-38
+										8 800 600-49-29
 									</a>
 								</Flex>
 								<Flex
@@ -72,7 +80,7 @@ const PreFooter = ({ pdfs }) => {
 								>
 									<Icon w={"25px"} h={"25px"} as={message} fill={"#1f243a"} />
 									<a
-										href="mailto:pashayev_fund@mail.ru"
+										href="mailto:info@mayak.help"
 										style={{
 											color: "#bf3132",
 											fontSize: "18px",
@@ -80,7 +88,7 @@ const PreFooter = ({ pdfs }) => {
 											marginLeft: "20px",
 										}}
 									>
-										pashayev_fund@mail.ru
+										info@mayak.help
 									</a>
 								</Flex>
 							</Flex>
@@ -104,7 +112,7 @@ const PreFooter = ({ pdfs }) => {
 							</Flex>
 							<Flex>
 								<Link
-									href="https://vk.com/id810628743"
+									href="https://vk.com/children_hospice"
 									w={"60px"}
 									h={"60px"}
 									borderRadius={"50%"}
@@ -127,8 +135,8 @@ const PreFooter = ({ pdfs }) => {
 										cursor={"pointer"}
 									/>
 								</Link>
-								<Link
-									href="https://t.me/elmanpashaev"
+								{/* <Link
+									href="https://mayak.help/"
 									w={"60px"}
 									h={"60px"}
 									borderRadius={"50%"}
@@ -151,7 +159,7 @@ const PreFooter = ({ pdfs }) => {
 										fill={tgHover ? "#f8f8f8" : "#1f243a"}
 										cursor={"pointer"}
 									/>
-								</Link>
+								</Link> */}
 							</Flex>
 						</Flex>
 						<Flex flexDir={"column"}>
@@ -199,8 +207,7 @@ const PreFooter = ({ pdfs }) => {
 								lineHeight={"27px"}
 								mb={"30px"}
 							>
-								141702, Московская область, г.о. Долгопрудный, ш. Лихачевское,
-								д. 20 к. 1, кв. 80
+								ул Долгоруковская, д 30, Москва
 							</Text>
 							<Flex mb={"30px"} flexDir={"column"}>
 								<Flex
@@ -213,7 +220,7 @@ const PreFooter = ({ pdfs }) => {
 								>
 									<Icon w={"25px"} h={"25px"} as={phone} fill={"#1f243a"} />
 									<a
-										href="tel: +7 (915) 233-33-38"
+										href="tel: 8 800 600-49-29"
 										style={{
 											color: "#bf3132",
 											fontSize: "18px",
@@ -221,7 +228,7 @@ const PreFooter = ({ pdfs }) => {
 											marginLeft: "20px",
 										}}
 									>
-										+7 (915) 233-33-38
+										8 800 600-49-29
 									</a>
 								</Flex>
 								<Flex
@@ -233,7 +240,7 @@ const PreFooter = ({ pdfs }) => {
 								>
 									<Icon w={"25px"} h={"25px"} as={message} fill={"#1f243a"} />
 									<a
-										href="mailto:pashayev_fund@mail.ru"
+										href="mailto:info@mayak.help"
 										style={{
 											color: "#bf3132",
 											fontSize: "18px",
@@ -241,7 +248,7 @@ const PreFooter = ({ pdfs }) => {
 											marginLeft: "20px",
 										}}
 									>
-										pashayev_fund@mail.ru
+										info@mayak.help
 									</a>
 								</Flex>
 							</Flex>
@@ -258,7 +265,7 @@ const PreFooter = ({ pdfs }) => {
 							</Flex>
 							<Flex>
 								<Link
-									href="https://vk.com/id810628743"
+									href="https://vk.com/children_hospice"
 									w={"60px"}
 									h={"60px"}
 									borderRadius={"50%"}
@@ -281,8 +288,8 @@ const PreFooter = ({ pdfs }) => {
 										cursor={"pointer"}
 									/>
 								</Link>
-								<Link
-									href="https://t.me/elmanpashaev"
+								{/* <Link
+									href="https://mayak.help/"
 									w={"60px"}
 									h={"60px"}
 									borderRadius={"50%"}
@@ -305,7 +312,7 @@ const PreFooter = ({ pdfs }) => {
 										fill={tgHover ? "#f8f8f8" : "#1f243a"}
 										cursor={"pointer"}
 									/>
-								</Link>
+								</Link> */}
 							</Flex>
 						</Flex>
 						<Flex flexDir={"column"}>
