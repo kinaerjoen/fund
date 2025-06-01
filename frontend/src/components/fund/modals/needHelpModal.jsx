@@ -50,7 +50,7 @@ export const NeedHelpModal = ({ isOpen, onClose }) => {
 
 							<ModalCloseButton />
 							<ModalBody px={"55px"} pb={"55px"} w={"769px"} h={"672px"}>
-								<NeedHelp />
+								<NeedHelp onClose={onClose} />
 							</ModalBody>
 						</ModalContent>
 					</Modal>
@@ -85,7 +85,7 @@ export const NeedHelpModal = ({ isOpen, onClose }) => {
 
 							<ModalCloseButton />
 							<ModalBody px={"25px"} pb={"25px"} w={"330px"}>
-								<NeedHelp />
+								<NeedHelp onClose={onClose} />
 							</ModalBody>
 						</ModalContent>
 					</Modal>

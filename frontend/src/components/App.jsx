@@ -85,7 +85,7 @@ function App() {
 								path="sovet"
 								element={<PopechitelskiySovet participants={participants} />}
 							/>
-							{/* <Route path="kak-pomoch" element={<Help />} /> */}
+							<Route path="kak-pomoch" element={<Help />} />
 							<Route
 								path="proekty"
 								element={<Projects projects={projects} />}

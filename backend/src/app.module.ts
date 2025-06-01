@@ -13,6 +13,7 @@ import { PdfModule } from './modules/pdf/pdf.module';
 import { ProjectModule } from './modules/projects/new.module';
 import { ThankModule } from './modules/thank/thank.module';
 import { ReportModule } from './modules/report/report.module';
+import { HelpRequestModule } from './modules/help-request/help-request.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { ReportModule } from './modules/report/report.module';
     ProjectModule,
     PdfModule,
     ReportModule,
+    HelpRequestModule,
     TypeOrmModule.forRoot(OrmConfig),
   ],
   providers: [AppService, AccessTokenStrategy, JwtService],
