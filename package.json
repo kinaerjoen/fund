@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start:front": "cd ./frontend && npm start",
+    "start:back": "cd ./backend && nest start --watch"
+  }
+}

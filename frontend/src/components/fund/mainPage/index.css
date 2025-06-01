@@ -1,0 +1,12 @@
+@media only screen and (max-width: 767px) {
+	.news-image {
+		max-height: 120px;
+		max-width: 130px !important;
+		margin-left: 5px;
+		border-radius: 5px;
+	}
+}
+
+.news-image {
+	object-fit: cover;
+}

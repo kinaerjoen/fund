@@ -1,0 +1,11 @@
+@media only screen and (max-width: 767px) {
+	.big-card {
+		height: min-content !important;
+		width: 88vw !important;
+	}
+
+	.novost-header {
+		text-align: center;
+		font-size: 25px !important;
+	}
+}

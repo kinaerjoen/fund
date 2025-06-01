@@ -1,0 +1,25 @@
+@font-face {
+	font-family: "Wix Madefor Display";
+	src: url(./fonts/WixMadeforDisplay-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: "Oswald";
+	src: url(./fonts/Oswald-VariableFont_wght.ttf);
+}
+
+* {
+	margin: 0;
+	font-family: "Wix Madefor Display", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+	width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+	.container {
+	}
+}
