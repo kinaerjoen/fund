@@ -19,10 +19,12 @@ import { DeleteProject } from "./deleteProject";
 import { DeleteReport } from "./deleteReport";
 import { DeleteThank } from "./deleteThank";
 import SimpleSidebar from "./Sidebar";
+import HelpRequests from "../help-requests";
 
-const pages = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const pages = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const Panel = () => {
+	console.log('Panel component mounted');
 	const [currentPage, setCurrentPage] = useState(pages[0]);
 	const [news, setNews] = useState([]);
 	const [thanks, setThanks] = useState([]);
@@ -32,6 +34,7 @@ const Panel = () => {
 	const [reports, setReports] = useState([]);
 
 	useEffect(() => {
+		console.log('Current page changed to:', currentPage);
 		if (currentPage === 1) {
 			const onSuccess = (result) => {
 				setNews(result.data);
@@ -158,7 +161,10 @@ const Panel = () => {
 			<SimpleSidebar
 				pages={pages}
 				currentPage={currentPage}
-				setCurrentPage={setCurrentPage}
+				setCurrentPage={(page) => {
+					console.log('Setting current page to:', page);
+					setCurrentPage(page);
+				}}
 			>
 				<Box
 					h={"100%"}
@@ -325,18 +331,18 @@ const Panel = () => {
 										<DeleteReport
 											key={i}
 											id={report.id}
-											title={report.title}
-											content={report.content}
-											createdAt={report.createdAt}
+											report={report}
 											deleteReport={deleteReportFunc}
-											medias={report.medias}
-											deletePdf={deletePdfFunc}
 										/>
 									))
 								) : (
 									<Heading fontSize={"20px"}>Список отчетов пуст.</Heading>
 								)}
 							</Box>
+						)}
+						{currentPage === 12 && (
+							console.log('Rendering HelpRequests component'),
+							<HelpRequests />
 						)}
 					</Flex>
 				</Box>
