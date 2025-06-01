@@ -131,7 +131,7 @@ const HelpRequests = () => {
 							</Td>
 							<Td>{request.name}</Td>
 							<Td>{request.email}</Td>
-							<Td maxW="300px" whiteSpace="pre-wrap">
+							<Td minW="300px" maxW="300px" whiteSpace="pre-wrap">
 								{request.comment}
 							</Td>
 							<Td>
