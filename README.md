@@ -4,7 +4,7 @@
 
 ## Built With
 
-### FE:
+### BE:
 
 - [ ] TypeScript
 - [ ] Node
@@ -13,7 +13,7 @@
 - [ ] Docker
 - [ ] Nginx
 
-### BE:
+### FE:
 
 - [ ] JavaScript
 - [ ] React
