@@ -12,8 +12,8 @@ export const getHelpRequests = async () => {
 	return response.data;
 };
 
-export const markHelpRequestAsProcessed = async (id, processedBy) => {
-	const response = await useAxios.put(`${API_URL}/${id}/process`, { processedBy });
+export const updateHelpRequestStatus = async (id, statusData) => {
+	const response = await useAxios.put(`${API_URL}/${id}/status`, statusData);
 	return response.data;
 };
 

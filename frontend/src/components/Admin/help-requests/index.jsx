@@ -11,15 +11,58 @@ import {
 	Thead,
 	Tr,
 	useToast,
+	Select,
+	Input,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalBody,
+	ModalCloseButton,
+	useDisclosure,
+	FormControl,
+	FormLabel,
+	Textarea,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { getHelpRequests, markHelpRequestAsProcessed, deleteHelpRequest } from "../../../api/helpRequests";
+import { getHelpRequests, updateHelpRequestStatus, deleteHelpRequest } from "../../../api/helpRequests";
+
+const HelpRequestStatus = {
+	NEW: 'new',
+	IN_PROGRESS: 'in_progress',
+	ON_HOLD: 'on_hold',
+	COMPLETED: 'completed',
+	CANCELLED: 'cancelled'
+};
+
+const statusLabels = {
+	[HelpRequestStatus.NEW]: 'Новая',
+	[HelpRequestStatus.IN_PROGRESS]: 'В работе',
+	[HelpRequestStatus.ON_HOLD]: 'На паузе',
+	[HelpRequestStatus.COMPLETED]: 'Завершена',
+	[HelpRequestStatus.CANCELLED]: 'Отменена'
+};
+
+const statusColors = {
+	[HelpRequestStatus.NEW]: 'red.500',
+	[HelpRequestStatus.IN_PROGRESS]: 'blue.500',
+	[HelpRequestStatus.ON_HOLD]: 'orange.500',
+	[HelpRequestStatus.COMPLETED]: 'green.500',
+	[HelpRequestStatus.CANCELLED]: 'gray.500'
+};
 
 const HelpRequests = () => {
 	console.log('HelpRequests component mounted');
 	const [requests, setRequests] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [selectedRequest, setSelectedRequest] = useState(null);
+	const [statusData, setStatusData] = useState({
+		status: '',
+		assignedTo: '',
+		statusComment: ''
+	});
 	const toast = useToast();
+	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	const fetchRequests = async () => {
 		console.log('Fetching help requests...');
@@ -53,13 +96,14 @@ const HelpRequests = () => {
 		fetchRequests();
 	}, []);
 
-	const handleMarkAsProcessed = async (id) => {
+	const handleStatusUpdate = async () => {
 		try {
-			await markHelpRequestAsProcessed(id, localStorage.getItem("userLogin"));
+			await updateHelpRequestStatus(selectedRequest.id, statusData);
 			await fetchRequests();
+			onClose();
 			toast({
 				title: "Успешно",
-				description: "Заявка отмечена как обработанная",
+				description: "Статус заявки обновлен",
 				status: "success",
 				duration: 3000,
 				isClosable: true,
@@ -101,6 +145,16 @@ const HelpRequests = () => {
 		}
 	};
 
+	const openStatusModal = (request) => {
+		setSelectedRequest(request);
+		setStatusData({
+			status: request.status,
+			assignedTo: request.assignedTo || '',
+			statusComment: request.statusComment || ''
+		});
+		onOpen();
+	};
+
 	if (isLoading) {
 		return (
 			<Box p={4}>
@@ -120,6 +174,7 @@ const HelpRequests = () => {
 						<Th>Email</Th>
 						<Th>Комментарий</Th>
 						<Th>Статус</Th>
+						<Th>Ответственный</Th>
 						<Th>Действия</Th>
 					</Tr>
 				</Thead>
@@ -135,27 +190,27 @@ const HelpRequests = () => {
 								{request.comment}
 							</Td>
 							<Td>
-								{request.isProcessed ? (
-									<Text color="green.500">
-										Обработана {request.processedBy}
-										<br />
-										{new Date(request.processedAt).toLocaleString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
+								<Text color={statusColors[request.status]}>
+									{statusLabels[request.status]}
+								</Text>
+								{request.statusComment && (
+									<Text fontSize="sm" color="gray.500">
+										{request.statusComment}
 									</Text>
-								) : (
-									<Text color="red.500">Новая</Text>
 								)}
 							</Td>
 							<Td>
+								{request.assignedTo || '-'}
+							</Td>
+							<Td>
 								<Flex gap={2}>
-									{!request.isProcessed && (
-										<Button
-											colorScheme="green"
-											size="sm"
-											onClick={() => handleMarkAsProcessed(request.id)}
-										>
-											Обработать
-										</Button>
-									)}
+									<Button
+										colorScheme="blue"
+										size="sm"
+										onClick={() => openStatusModal(request)}
+									>
+										Изменить статус
+									</Button>
 									<Button
 										colorScheme="red"
 										size="sm"
@@ -169,6 +224,52 @@ const HelpRequests = () => {
 					))}
 				</Tbody>
 			</Table>
+
+			<Modal isOpen={isOpen} onClose={onClose}>
+				<ModalOverlay />
+				<ModalContent>
+					<ModalHeader>Изменение статуса заявки</ModalHeader>
+					<ModalCloseButton />
+					<ModalBody pb={6}>
+						<FormControl mb={4}>
+							<FormLabel>Статус</FormLabel>
+							<Select
+								value={statusData.status}
+								onChange={(e) => setStatusData({ ...statusData, status: e.target.value })}
+							>
+								{Object.entries(statusLabels).map(([value, label]) => (
+									<option key={value} value={value}>{label}</option>
+								))}
+							</Select>
+						</FormControl>
+
+						<FormControl mb={4}>
+							<FormLabel>Ответственный</FormLabel>
+							<Input
+								value={statusData.assignedTo}
+								onChange={(e) => setStatusData({ ...statusData, assignedTo: e.target.value })}
+								placeholder="Введите имя ответственного"
+							/>
+						</FormControl>
+
+						<FormControl mb={4}>
+							<FormLabel>Комментарий к статусу</FormLabel>
+							<Textarea
+								value={statusData.statusComment}
+								onChange={(e) => setStatusData({ ...statusData, statusComment: e.target.value })}
+								placeholder="Введите комментарий к статусу"
+							/>
+						</FormControl>
+
+						<Flex justify="flex-end" gap={2}>
+							<Button onClick={onClose}>Отмена</Button>
+							<Button colorScheme="blue" onClick={handleStatusUpdate}>
+								Сохранить
+							</Button>
+						</Flex>
+					</ModalBody>
+				</ModalContent>
+			</Modal>
 		</Box>
 	);
 };

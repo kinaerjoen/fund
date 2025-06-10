@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards, Request } from '@nestjs/common';
 import { HelpRequestService } from './help-request.service';
-import { CreateHelpRequestDto } from './create-help-request.dto';
+import { CreateHelpRequestDto, UpdateHelpRequestStatusDto } from './create-help-request.dto';
 import { AccessTokenGuard } from 'src/common/guards/accessToken.guard';
 
 @Controller('help-requests')
@@ -19,12 +19,13 @@ export class HelpRequestController {
   }
 
   @UseGuards(AccessTokenGuard)
-  @Put(':id/process')
-  async markAsProcessed(
+  @Put(':id/status')
+  async updateStatus(
     @Param('id') id: string,
+    @Body() updateStatusDto: UpdateHelpRequestStatusDto,
     @Request() req: any,
   ) {
-    return this.helpRequestService.markAsProcessed(id, req.user?.username || 'admin');
+    return this.helpRequestService.updateStatus(id, updateStatusDto, req.user?.username || 'admin');
   }
 
   @UseGuards(AccessTokenGuard)

@@ -1,4 +1,5 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
+import { IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { HelpRequestStatus } from '../../entities/help-request.entity';
 
 export class CreateHelpRequestDto {
   @IsNotEmpty()
@@ -12,4 +13,18 @@ export class CreateHelpRequestDto {
   @IsNotEmpty()
   @IsString()
   comment: string;
+}
+
+export class UpdateHelpRequestStatusDto {
+  @IsNotEmpty()
+  @IsEnum(HelpRequestStatus)
+  status: HelpRequestStatus;
+
+  @IsOptional()
+  @IsString()
+  assignedTo?: string;
+
+  @IsOptional()
+  @IsString()
+  statusComment?: string;
 } 
